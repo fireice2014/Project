@@ -1,0 +1,14 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <mapping class="com.snwd.model.User" />
+		<mapping class="com.snwd.model.Role" />
+		<mapping class="com.snwd.model.Dict" />
+		<mapping class="com.snwd.model.DictType" />
+		<mapping class="com.snwd.model.Invitation" />
+		<mapping class="com.snwd.model.Channel" />
+		<mapping class="com.snwd.model.ReplyDetail" />
+    </session-factory>
+</hibernate-configuration>

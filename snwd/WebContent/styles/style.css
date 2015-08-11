@@ -1,0 +1,209 @@
+body{
+	font-size:12px;
+	font-family:Arial;
+	margin:0 auto;
+	width:100%;
+	background-color:#ffffff;
+}
+.main{
+	width:1000px;
+	margin:auto;
+}
+.top{
+	width:1000px;
+}
+.float_left{
+	float:left;
+}
+.float_right{
+	float:right;
+}
+.topbg{
+	background:url(../images/top_bg.jpg) repeat-x;
+	height:29px;
+	border-left:1px solid #e6f2ff;
+	border-right:1px solid #e6f2ff;
+}
+.show_new a{
+	text-decoration:none;
+	font-size:12px;
+	font-family:Arial;
+}
+.show_new a:hover{
+	text-decoration:underline;
+}
+.logo{
+	width:auto;
+	margin:15px 0 0 15px;
+	width:256px;
+	height:69px;
+}
+.denglu{
+	width:360px;
+	margin:15px 20px 0 0;
+}
+.denglu table{
+	font-size:12px;
+	font-family:Arial;
+}
+.denglu span{
+	font-size:12px;	
+}
+.denglulogo{
+	width:1000px;
+}
+.daohang{
+	width:970px;
+	margin:15px 0 0 15px;
+	background:url(../images/daohangcenter.jpg) repeat-x;
+}
+.search{
+	width:968px;
+	height:45px;
+	margin:0 0 0 15px;
+	border-right:1px solid #E5EDF2;
+	border-left:1px solid #E5EDF2;
+	border-bottom:1px solid #E5EDF2;
+}
+.searchK{
+	width:286px;
+	height:30px;
+	margin:4px 0 0 4px;
+}
+.searchK input{
+flot:left;
+width:280px;
+height:20px;
+padding-top:9px;
+}
+.list_menu{
+	width:1000px;
+}
+.list_menu_top{
+	width:1000px;
+	font-size:12px;
+	font-family:Arial;
+}
+.list_menu_bottom{
+	width:1000px;
+	font-family:Arial;
+	font-size:12px;
+	height:35px;
+}
+.list_menu_bottom ul{
+margin:0;
+padding:0;
+}
+.list_menu_bottom li{
+	color:gray;
+}
+.list_menu ul{
+	width:600px;
+	height: 20px;
+	padding:10px 0 0 15px;
+	margin:0px;
+	list-style:none;
+}
+.list_menu li {
+	float:left;
+	padding: 0 10px 0 0;
+	background: url(../images/) left 4px no-repeat;
+}
+.middle{
+	width:1000px;
+}
+.middlebeijing{
+	background-color:#FFFFFF
+}
+.listTable{
+	margin-top:10px;
+	width:967px;
+	float:left;
+	border:1px solid #CDCDCD;
+	padding-bottom:10px;
+}
+
+.listTable_one{
+	margin-top:10px;
+	width:967px;
+	border-bottom:0px solid #CDCDCD;
+}
+.middle{
+	width:1000px;
+	margin-left:13px;
+}
+.listTable{
+	width:970px;
+	border:1px solid #ccc;
+}
+.titleDiv{
+	width:970px;
+	height:30px;
+	line-height:30px;
+	background: url(../images/titleBg.jpg) repeat-x;
+	border-bottom:1px solid #CDCDCD;
+}
+.content_row{
+	width: 220px;
+	padding-bottom:10px;
+	float:left;
+	margin:0 10px 10px 10px;
+	border-bottom:1px dashed #CDCDCD;
+}
+.tupian{
+	margin:15px 0 0 100px;
+}
+.zi1{
+	margin:2px 0 0 10px
+}
+.tupian1{
+	margin:-130px 0 0 220px;
+}
+.tupian2{
+	margin:22px 0 0 220px;
+}
+.zi2{
+	margin:2px 0 0 10px
+}
+.tupian3{
+	margin:-130px 0 0 450px;
+}
+.zi3{
+	margin:2px 0 0 10px
+}
+.tupian4{
+	margin:-55px 0 0 680px;
+}
+.zi4{
+	margin:2px 0 0 10px
+}
+.foot{
+	width:1000px;
+	height: 50px;
+	display:inline;
+	margin:10px 0 0 0px;
+}
+.footone{ 
+	width:396px;
+	height: 55px;
+	background:url(../images/foot1.jpg) repeat-x;
+}
+.footone span{
+	font-size:12px;
+	color:white;
+	margin:20px 0 0 10px;
+	float:left;
+}
+.foottwo{
+	width:603px;
+	height: 55px;
+	background:url(../images/foot2.jpg) repeat-x;
+}
+.bzname{
+font-weight:bold;
+}
+.ta tr td{
+background:#dfdfdf;
+}
+
+

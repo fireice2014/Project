@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+
+<sqlMap namespace="ReplyDetailSQL">
+    <typeAlias alias="replyDetail" type="com.snwd.model.ReplyDetail"/>    
+    
+     <resultMap id="replyDetailResult" class="replyDetail">
+        <result property="replyCode" column="replyCode"/>
+        <result property="invitationCode" column="invitationCode"/>
+        <result property="replyer" column="replyer"/>
+        <result property="replyTime" column="replyTime"/>
+        <result property="replyContent" column="replyContent"/>
+     </resultMap>
+     <insert id="addReplyDetail" parameterClass="replyDetail">
+     <![CDATA[
+         insert into replyDetail (replyCode,invitationCode,replyer,replyTime,replyContent)
+         values (#replyCode#,#invitationCode#,#replyer#,#replyTime#,#replyContent#)
+     ]]>
+     </insert>
+      <update id="updateReplyDetail" parameterClass="replyDetail">
+     <![CDATA[
+         update replyDetail set invitationCode=#invitationCode#,replyer=#replyer#,replyTime=#replyTime#,replyContent=#replyContent#
+         where replyCode=#replyCode#
+     ]]>
+     </update>
+      <delete id="deleteReplyDetail" parameterClass="java.lang.String">
+    	<![CDATA[
+        delete from replyDetail where replyCode=#replyCode#
+   		 ]]>
+      </delete>
+      <select id="getReplyDetails" parameterClass="java.lang.String" resultMap="replyDetailResult">
+    	<![CDATA[
+        select * from replyDetail $sql$
+      ]]>
+    </select> 
+    <select id="getReplyDetail" resultMap="replyDetailResult">
+    <![CDATA[
+        select * from replyDetail where replyCode=#replyCode#
+    ]]>
+    </select>
+</sqlMap>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="InvitationSQL">
+    <typeAlias alias="invitation" type="com.snwd.model.Invitation"/>
+    
+	 <resultMap id="invitationResult" class="invitation">
+        <result property="invitationCode" column="invitationCode"/>
+        <result property="invitationTitle" column="invitationTitle"/>
+        <result property="invitationContent" column="invitationContent"/>
+        <result property="viewTimes" column="viewTimes"/>
+        <result property="respondTimes" column="respondTimes"/>
+        <result property="sendName" column="sendName"/>
+        <result property="isTop" column="isTop"/>
+        <result property="isEssence" column="isEssence"/>
+        <result property="channelCode" column="channelCode"/>
+        <result property="sendEr" column="sendEr"/>
+        <result property="zdTime" column="zdTime"/>
+    </resultMap>
+    
+    <insert id="addInvitation" parameterClass="invitation">
+    <![CDATA[
+        insert into invitation (invitationCode,invitationTitle, invitationContent,viewTimes,respondTimes,sendName,isTop,isEssence,channelCode,sendEr,zdTime) 
+        values (#invitationCode#, #invitationTitle#, #invitationContent#, #viewTimes#, #respondTimes#, #sendName#, #isTop#, #isEssence#,#channelCode#,#sendEr#,#zdTime#)
+    ]]>
+    </insert>
+    
+    <update id="updateInvitation" parameterClass="invitation">
+    <![CDATA[
+        update invitation set invitationTitle=#invitationTitle#, invitationContent=#invitationContent#, viewTimes=#viewTimes#, respondTimes=#respondTimes#, sendName=#sendName#, isTop=#isTop#, isEssence=#isEssence#,channelCode=#channelCode#,zdTime=#zdTime#
+        where invitationCode=#invitationCode#
+    ]]>
+    </update>
+    
+    <delete id="deleteInvitation" parameterClass="java.lang.String">
+    <![CDATA[
+        delete from invitation where invitationCode=#invitationCode#
+    ]]>
+    </delete>
+      <select id="getInvitations" parameterClass="java.lang.String" resultMap="invitationResult">
+    <![CDATA[
+        select * from invitation $sql$
+    ]]>
+    </select> 
+    <select id="getInvitation" resultMap="invitationResult">
+    <![CDATA[
+        select * from invitation where invitationCode=#invitationCode#
+    ]]>
+    </select>
+</sqlMap>

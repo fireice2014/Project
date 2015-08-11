@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" 
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+
+<sqlMap namespace="ChannelSQL">
+    <typeAlias alias="channel" type="com.snwd.model.Channel"/>    
+    
+     <resultMap id="channelResult" class="channel">
+        <result property="channelCode" column="channelCode"/>
+        <result property="channelName" column="channelName"/>
+        <result property="superCode" column="superCode"/>
+        <result property="lookNum" column="lookNum"/>
+        <result property="invitationNum" column="invitationNum"/>
+        <result property="isDelete" column="isDelete"/>
+        <result property="level" column="level"/>
+     </resultMap>
+     <insert id="addChannel" parameterClass="channel">
+     <![CDATA[
+         insert into channel (channelCode,channelName,superCode,lookNum,invitationNum,isDelete,level)
+         values (#channelCode#,#channelName#,#superCode#,#lookNum#,#invitationNum#,#isDelete#,#level#)
+     ]]>
+     </insert>
+     <update id="updateChannel" parameterClass="channel">
+     <![CDATA[
+         update channel set channelName=#channelName#,superCode=#superCode#,lookNum=#lookNum#,invitationNum=#invitationNum#
+         where channelCode=#channelCode#
+     ]]>
+     </update>
+      <delete id="deleteChannel" parameterClass="java.lang.String">
+    <![CDATA[
+        delete from channel where channelCode=#channelCode#
+    ]]>
+    </delete>
+         <select id="getChannels" parameterClass="java.lang.String" resultMap="channelResult">
+    <![CDATA[
+        select * from channel $sql$
+    ]]>
+    </select> 
+    <select id="getChannel" resultMap="channelResult">
+    <![CDATA[
+        select * from channel where channelCode=#channelCode#
+    ]]>
+    </select>
+</sqlMap>

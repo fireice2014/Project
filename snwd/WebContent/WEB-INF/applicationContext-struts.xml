@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+       default-lazy-init="true">
+
+    <bean id="adminInterceptor" class="com.snwd.webapp.interceptor.UserRoleAuthorizationInterceptor">
+        <property name="authorizedRoles" value="ROLE_ADMIN"/>
+    </bean>
+    
+    <bean id="signupAction" class="com.snwd.webapp.action.SignupAction" scope="prototype">
+        <property name="userManager" ref="userManager"/>
+        <property name="roleManager" ref="roleManager"/>
+        <property name="mailEngine" ref="mailEngine"/>
+        <property name="mailMessage" ref="mailMessage"/>
+        <property name="templateName" value="accountCreated.vm"/>
+    </bean>
+    
+    <bean id="userAction" class="com.snwd.webapp.action.UserAction" scope="prototype">
+        <property name="userManager" ref="userManager"/>
+        <property name="roleManager" ref="roleManager"/>
+        <property name="mailEngine" ref="mailEngine"/>
+        <property name="mailMessage" ref="mailMessage"/>
+        <property name="templateName" value="accountCreated.vm"/>
+    </bean>
+    
+    <bean id="passwordHintAction" class="com.snwd.webapp.action.PasswordHintAction" scope="prototype">
+        <property name="userManager" ref="userManager"/>
+        <property name="mailEngine" ref="mailEngine"/>
+        <property name="mailMessage" ref="mailMessage"/>
+    </bean>
+    <bean id="invitationAction" class="com.snwd.webapp.action.InvitationAction" scope="prototype">
+        <property name="invitationManager" ref="invitationManager"/>
+        <property name="replyDetailManager" ref="replyDetailManager"/>
+        <property name="userManager" ref="userManager"/>
+        <property name="roleManager" ref="roleManager"/>
+    </bean>
+    <bean id="channelAction" class="com.snwd.webapp.action.ChannelAction" scope="prototype">
+        <property name="channelManager" ref="channelManager"/>
+        <property name="invitationManager" ref="invitationManager"/>
+        <property name="userManager" ref="userManager"/>
+    </bean>
+    <bean id="replyDetailAction" class="com.snwd.webapp.action.ReplyDetailAction" scope="prototype">
+        <property name="replyDetailManager" ref="replyDetailManager"/>
+        <property name="invitationManager" ref="invitationManager"/>
+    </bean>
+</beans>
